@@ -50,6 +50,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   String _status = "GENAP";
+  bool _isVisible = false;
 
   void _updateStatus() {
     if (_counter % 2 == 0) {
@@ -76,6 +77,9 @@ class _MyHomePageState extends State<MyHomePage> {
       // called again, and so nothing would appear to happen.
       _counter++;
       _updateStatus();
+      if (_counter != 0) {
+        _isVisible = true;
+      }
     });
   }
 
@@ -89,6 +93,8 @@ class _MyHomePageState extends State<MyHomePage> {
       if (_counter > 0) {
           _counter--;
           _updateStatus();
+      } if (_counter == 0) {
+          _isVisible = false;
       }
     });
   }
@@ -139,19 +145,22 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: Stack(children: <Widget>[
-        Container(
-          margin: const EdgeInsets.only(
-                      left: 40,
-                      top: 15,
-                      right: 15,
-                      bottom: 15,
-                    ),
-          alignment: Alignment.bottomLeft,
-          child: FloatingActionButton(
-                    heroTag: null,
-                    onPressed: _decrementCounter,
-                    tooltip: 'Decrement',
-                    child: const Icon(Icons.remove),
+        Visibility(
+          visible: _isVisible,
+          child: Container(
+                  margin: const EdgeInsets.only(
+                              left: 40,
+                              top: 15,
+                              right: 15,
+                              bottom: 15,
+                            ),
+                  alignment: Alignment.bottomLeft,
+                  child: FloatingActionButton(
+                            heroTag: null,
+                            onPressed: _decrementCounter,
+                            tooltip: 'Decrement',
+                            child: const Icon(Icons.remove),
+                        ),
                 ),
         ),
         Container(
