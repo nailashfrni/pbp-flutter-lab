@@ -11,14 +11,6 @@ void main() {
 class MyApp extends StatelessWidget {
   MyApp({super.key});
 
-  // addData(List<Widget> lstData, String judul, int nominal, String tipe) {
-  //   lstData.add(ListTile(
-  //     title: Text(judul),
-  //     subtitle: Text(nominal.toString()),
-  //     trailing: Text(tipe),
-  //   ));
-  // }
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
