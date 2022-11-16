@@ -1,11 +1,23 @@
+import 'package:counter_7/drawer.dart';
+import 'package:counter_7/tambah_budget.dart';
 import 'package:flutter/material.dart';
 
+List<Budget> lstData = [];
+
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  // addData(List<Widget> lstData, String judul, int nominal, String tipe) {
+  //   lstData.add(ListTile(
+  //     title: Text(judul),
+  //     subtitle: Text(nominal.toString()),
+  //     trailing: Text(tipe),
+  //   ));
+  // }
 
   // This widget is the root of your application.
   @override
@@ -24,13 +36,13 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Program Counter'),
+      home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({super.key});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -41,7 +53,7 @@ class MyHomePage extends StatefulWidget {
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
 
-  final String title;
+  final String title = 'Program Counter';
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -91,10 +103,11 @@ class _MyHomePageState extends State<MyHomePage> {
       // _counter without calling setState(), then the build method would not be
       // called again, and so nothing would appear to happen.
       if (_counter > 0) {
-          _counter--;
-          _updateStatus();
-      } if (_counter == 0) {
-          _isVisible = false;
+        _counter--;
+        _updateStatus();
+      }
+      if (_counter == 0) {
+        _isVisible = false;
       }
     });
   }
@@ -113,6 +126,8 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
+      // Menambahkan drawer menu
+      drawer: DrawerApp(),
       body: Center(
         // Center is a layout widget. It takes a single child and positions it
         // in the middle of the parent.
@@ -144,37 +159,39 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton: Stack(children: <Widget>[
-        Visibility(
-          visible: _isVisible,
-          child: Container(
-                  margin: const EdgeInsets.only(
-                              left: 40,
-                              top: 15,
-                              right: 15,
-                              bottom: 15,
-                            ),
-                  alignment: Alignment.bottomLeft,
-                  child: FloatingActionButton(
-                            heroTag: null,
-                            onPressed: _decrementCounter,
-                            tooltip: 'Decrement',
-                            child: const Icon(Icons.remove),
-                        ),
-                ),
-        ),
-        Container(
-          margin: const EdgeInsets.all(15.0),
-          alignment: Alignment.bottomRight,
-          child: FloatingActionButton(
-                    heroTag: null,
-                    onPressed: _incrementCounter,
-                    tooltip: 'Increment',
-                    child: const Icon(Icons.add),
-                ), 
-        ),
-      // This trailing comma makes auto-formatting nicer for build methods.
-      ],),
+      floatingActionButton: Stack(
+        children: <Widget>[
+          Visibility(
+            visible: _isVisible,
+            child: Container(
+              margin: const EdgeInsets.only(
+                left: 40,
+                top: 15,
+                right: 15,
+                bottom: 15,
+              ),
+              alignment: Alignment.bottomLeft,
+              child: FloatingActionButton(
+                heroTag: null,
+                onPressed: _decrementCounter,
+                tooltip: 'Decrement',
+                child: const Icon(Icons.remove),
+              ),
+            ),
+          ),
+          Container(
+            margin: const EdgeInsets.all(15.0),
+            alignment: Alignment.bottomRight,
+            child: FloatingActionButton(
+              heroTag: null,
+              onPressed: _incrementCounter,
+              tooltip: 'Increment',
+              child: const Icon(Icons.add),
+            ),
+          ),
+          // This trailing comma makes auto-formatting nicer for build methods.
+        ],
+      ),
     );
   }
 }

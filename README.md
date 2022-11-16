@@ -47,3 +47,34 @@ Final digunakan untuk mengatur variable yang inisiasi nilainya hanya sekali saat
 - https://levelup.gitconnected.com/6-easy-tips-when-working-with-setstate-in-a-flutter-application-3d629bc77a16
 - javatpoint.com
 - api.flutter.dev/
+
+# Tugas 8 PBP
+
+## Questions
+
+### **1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`**<br><br>
+
+
+
+### **2. Widget yang digunakan beserta fungsinya**
+
+- Scaffold: menerapkan struktur visual dari Material Design, di dalamnya terdapat banyak widget yang dapat digunakan seperti Drawer, SnackBar, dll.
+- Column: menyusun beberapa widget children dalam bentuk kolom secara vertikal
+- Text: menampilkan text atau string pada aplikasi
+- Container: mengatur beberapa widget children, termasuk mengatur padding, margin, dsb.
+- FloatingActionButton: button yang dapat memicu terjadinya event di aplikasi
+- Icon: menampilkan icon di aplikasi
+
+### **3. Jenis-jenis event pada Flutter**
+
+
+
+### **4. Cara kerja Navigator dalam mengganti halaman aplikasi**
+
+
+
+### **5. Implementasi checklist**
+
+
+
+## Referensi
