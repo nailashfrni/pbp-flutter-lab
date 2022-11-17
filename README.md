@@ -2,7 +2,7 @@
 
 ## Questions
 
-### **1. Stateless widget dan stateful widget**<br><br>
+### **1. Stateless widget dan stateful widget**
 
 Stateless Widget adalah widget yang pengaturannya sudah diatur saat awal inisiasi dan tidak bisa diubah.
 
@@ -52,7 +52,7 @@ Final digunakan untuk mengatur variable yang inisiasi nilainya hanya sekali saat
 
 ## Questions
 
-### **1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`**<br><br>
+### **1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`**
 
 Navigator.push akan menambahkan halaman baru pada top of Stack. Halaman yang sudah pernah diakses sebelumnya akan tetap berada pada stack dan dapat dikembalikan dengan method Navigator.pop
 
@@ -106,5 +106,5 @@ Ketika dipush, halaman baru tersebut akan disimpan di top of stack dan tampilan 
 - Pada halaman data_budget.dart, ditambahkan suatu kolom untuk menampilkan data-data budget pada list. Data-data tersebut diiterasi dan ditampilkan menggunakan widget Material dan ListTile.
 
 ## Referensi
-https://belajarflutter.com/memahami-navigasi-routing-di-flutter/
-https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
+- https://belajarflutter.com/memahami-navigasi-routing-di-flutter/
+- https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
