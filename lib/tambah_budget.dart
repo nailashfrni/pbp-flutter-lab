@@ -28,10 +28,39 @@ class _MyFormPageState extends State<MyFormPage> {
       date: date!,
     );
     main.lstData.add(budget);
-    Navigator.pushReplacement(
-      context,
-      MaterialPageRoute(
-          builder: (context) => MyDataFormPage()),
+    // Navigator.pushReplacement(
+    //   context,
+    //   MaterialPageRoute(
+    //       builder: (context) => MyDataFormPage()),
+    // );
+    showDialog(
+      context: context,
+      builder: (context) {
+        return Dialog(
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+          elevation: 15,
+          child: Container(
+            child: ListView(
+              padding:
+                  const EdgeInsets.only(top: 20, bottom: 20),
+              shrinkWrap: true,
+              children: <Widget>[
+                const Center(
+                    child: Text('Berhasil menambahkan data!')),
+                const SizedBox(height: 20),
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('Kembali'),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 
