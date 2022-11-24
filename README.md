@@ -106,8 +106,8 @@ Ketika dipush, halaman baru tersebut akan disimpan di top of stack dan tampilan 
 - Pada halaman data_budget.dart, ditambahkan suatu kolom untuk menampilkan data-data budget pada list. Data-data tersebut diiterasi dan ditampilkan menggunakan widget Material dan ListTile.
 
 ## Referensi
-https://belajarflutter.com/memahami-navigasi-routing-di-flutter/
-https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
+- https://belajarflutter.com/memahami-navigasi-routing-di-flutter/
+- https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
 
 # Tugas 9 PBP
 
