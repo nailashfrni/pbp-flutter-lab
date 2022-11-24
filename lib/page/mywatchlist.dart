@@ -2,7 +2,6 @@ import 'package:counter_7/page/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'package:counter_7/page/drawer.dart';
 import 'package:counter_7/fetchData.dart';
-// import 'package:counter_7/model/watch_list.dart';
 
 class MyWatchListPage extends StatefulWidget {
   const MyWatchListPage({Key? key}) : super(key: key);
