@@ -2,7 +2,7 @@
 
 ## Questions
 
-### **1. Stateless widget dan stateful widget**<br><br>
+### **1. Stateless widget dan stateful widget**
 
 Stateless Widget adalah widget yang pengaturannya sudah diatur saat awal inisiasi dan tidak bisa diubah.
 
@@ -52,7 +52,7 @@ Final digunakan untuk mengatur variable yang inisiasi nilainya hanya sekali saat
 
 ## Questions
 
-### **1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`**<br><br>
+### **1. Perbedaan `Navigator.push` dan `Navigator.pushReplacement`**
 
 Navigator.push akan menambahkan halaman baru pada top of Stack. Halaman yang sudah pernah diakses sebelumnya akan tetap berada pada stack dan dapat dikembalikan dengan method Navigator.pop
 
@@ -108,3 +108,45 @@ Ketika dipush, halaman baru tersebut akan disimpan di top of stack dan tampilan 
 ## Referensi
 https://belajarflutter.com/memahami-navigasi-routing-di-flutter/
 https://medium.com/flutter-community/flutter-push-pop-push-1bb718b13c31
+
+# Tugas 9 PBP
+
+## Questions
+
+### **1. Apakah bisa mengambil data JSON tanpa membuat model terlebih dahulu?**
+
+Bisa, kita dapat mengambil data JSON tanpa membuat model. Namun, data tersebut akan sulit ditampilkan atau diakses karena tidak diubah ke dalam bentuk class
+
+### **2. Widget yang digunakan beserta fungsinya**
+
+- FutureBuider: widget yang akan menampilkan konten sesuai dengan interaksi snapshot terakhir dengan class Future
+- Column: widget yang menampilkan beberapa widget dalam 1 kolom
+- Text: widget untuk menampilkan teks
+- SizedBox: widget yang menampilkan kotak dengan ukuran tertentu (bisa pula digunakan sebagai penjarak antar-widget)
+- InkWell: widget yang membuat suatu area dapat merespon ketika ditekan
+- BoxDecoration: widget untuk menspesifikasi style atau dekorasi untuk sebuah kotak/container
+- BoxShadow: widget untuk menambahkan bayangan pada kotak/container
+- TextStyle: widget untuk menspesifikasikan style pada teks
+- RichText: widget yang memungkinkan menampilkan teks dengan style yang berbeda-beda
+- TextButton: widget button yang terdapat teks di dalamnya
+
+### **3. Mekanisme pengambilan data dari JSON hingga dapat ditampilkan di Flutter**
+
+- Menambah dependency http agar dapat mengirim request ke internet
+- Membuat model yang bersesuaian dengan struktur JSON agar dapat mudah ditampilkan nantinya (opsional)
+- Mengirim request HTTP Get untuk mendapatkan data JSON
+- Data tersebut diparse atau didecode menjadi instance dari model yang dibuat sebelumnya
+- Data yang telah didecode kemudian diproses oleh FutureBuilder untuk ditampilkan dalam aplikasi Flutter
+
+### **4. Implementasi checklist**
+
+- Menambah dependency http
+- Membuat model WatchList berdasarkan data JSON dari heroku, memanfaatkan web https://app.quicktype.io/
+- Struktur model yang didapat kemudian disimpan dalam watch_list.dart pada folder model
+- Membuat halaman mywatchlist.dart untuk menampilkan daftar judul film pada watch list
+- Membuat function fecthWatchList() yang berfungsi untuk mengambil data JSON dari link heroku dan di-decode menjadi list dari class WatchList
+- Pada method build, body Scaffold diisi dengan widget FutureBuilder, dengan parameter future merupakan hasil pemanggilan fetchWatchList(). 
+- Pada parameter builder di FutureBuilder, apabila hasil snapshot masih belum mendapatkan apa-apa, tampilan pada aplikasi akan terus loading. Apabila fetchWatchList sudah mengembalikan list of WatchList, barulah dibuat list yang masing-masing berisi judul film dari watchlist
+- Masing-masing item list diwrap dalam Widget InkWell, yang apabila ditekan akan mengganti variabel global showedWatchList dan mengganti ke halaman detail
+- Pada halaman detail, body Scaffold berisi container yang di dalamnya menampilkan informasi dari variabel global showedWatchList
+- Ditambahkan juga button untuk kembali ke halaman sebelumnya

@@ -1,5 +1,5 @@
-import 'package:counter_7/drawer.dart';
-import 'package:counter_7/tambah_budget.dart';
+import 'package:counter_7/page/drawer.dart';
+import 'package:counter_7/page/tambah_budget.dart';
 import 'package:flutter/material.dart';
 
 List<Budget> lstData = [];

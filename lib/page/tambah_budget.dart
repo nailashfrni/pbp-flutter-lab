@@ -1,8 +1,8 @@
-import 'package:counter_7/main.dart';
-import 'package:counter_7/data_budget.dart';
+import 'package:counter_7/main.dart' as main;
+import 'package:counter_7/page/data_budget.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/drawer.dart';
-import 'main.dart' as main;
+import 'package:counter_7/page/drawer.dart';
+// import 'main.dart' as main;
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key});
@@ -68,7 +68,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Form'),
+          title: const Text('Form'),
         ),
         // Menambahkan drawer menu
         drawer: DrawerApp(),

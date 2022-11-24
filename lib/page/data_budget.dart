@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/drawer.dart';
-import 'main.dart' as main;
+import 'package:counter_7/page/drawer.dart';
+import 'package:counter_7/main.dart' as main;
 
 class MyDataFormPage extends StatefulWidget {
   MyDataFormPage({super.key});
